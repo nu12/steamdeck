@@ -8,15 +8,10 @@ on:
 jobs:
   check:
     runs-on: self-hosted
-    container:
-      image: python:3.10
-      env:
-        TOKEN: ${{ secrets.TOKEN }}
     steps:
     - name: Checkout
       uses: actions/checkout@v4
-    - uses: nanasess/setup-chromedriver@v2
-    - name: Install packages
-      run: pip install requests selenium
     - name: Run script
+      env:
+        TOKEN: ${{ secrets.TOKEN }}
       run: python3 steam.py
