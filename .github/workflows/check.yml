@@ -8,13 +8,14 @@ on:
 jobs:
   check:
     runs-on: self-hosted
-    image: python:3.10
+    container:
+      image: python:3.10
+      env:
+        TOKEN: ${{ secrets.TOKEN }}
     steps:
     - name: Checkout
       uses: actions/checkout@v4
     - name: Install packages
       run: pip install requests selenium
     - name: Run script
-      env:
-      - TOKEN: ${{ secrets.TOKEN }}
       run: python3 steam.py
