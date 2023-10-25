@@ -44,9 +44,9 @@ for content in contents:
     for span in spans:
         status = span.get_attribute("textContent")
         print("Status is: " + status)
-        # if status == ' Out of stock':
-        #     print("Skip")
-        #     continue
+        if status == ' Out of stock':
+            print("Skip")
+            continue
         if status == ' Épuisé':
             print("Skip")
             continue
