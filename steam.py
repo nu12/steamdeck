@@ -13,7 +13,7 @@ data = {
 
 headers = {
     "Accept": "application/vnd.github+json", 
-    "Authorization: Bearer": "Bearer " + API_KEY, 
+    "Authorization": "Bearer " + API_KEY, 
     "X-GitHub-Api-Version": "2022-11-28"
     }
 
